@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="bg">
+    <div class="container">
+        <h2>Login Form</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" onkeydown="focusNextInput(this, 'password')">
+
+            <label for="password">Password:</label>
+            <div class="password-input">
+                <input type="password" id="password" name="password">
+                <button type="button" id="togglePassword" onclick="togglePasswordVisibility('password', 'togglePassword')"><i class="far fa-eye"></i></button>
+            </div>
+
+            <div class="button-container">
+                <input type="submit" id="submit" value="Login">
+            </div>
+        </form>
+        
+        <div class="forgot-password">
+            <a href="{% url 'passwordreset' %}">Forgot Password?</a>
+        </div>
+        
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert">{{ message }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        function focusNextInput(currentInput, nextInputId) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById(nextInputId).focus();
+            }
+        }
+
+        function togglePasswordVisibility(inputId, buttonId) {
+            var passwordInput = document.getElementById(inputId);
+            var visibilityButton = document.getElementById(buttonId);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                visibilityButton.innerHTML = '<i class="far fa-eye-slash"></i>';
+            } else {
+                passwordInput.type = "password";
+                visibilityButton.innerHTML = '<i class="far fa-eye"></i>';
+            }
+        }
+    </script>
+</body>
+</html>

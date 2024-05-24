@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body id="bg">
+    <div class="container">
+        <header>
+            <h1>Welcome to Our Website</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><h1>&nbsp;</h1></li> 
+                <li><a href="#">AboutUs</a></li>
+                <li><h1>&nbsp;</h1></li> 
+                <li><a href="#">Services</a></li>
+                <li><h1>&nbsp;</h1></li> 
+                <li><a href="#">ContactUs</a></li>
+                <li><h1>&nbsp;</h1></li> 
+                {% if user.is_authenticated %}
+                    <li><span class="user-info">Hello {{ user.username }}</span></li>
+                    <li><a href="{% url 'profile' %}">User Profile</a></li>
+                    <li class="logout"><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li class="nav-right"><a href="{% url 'register' %}">Register</a></li>
+                    <li class="nav-right"><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <footer>
+            <p>&copy; 2024 Our Company. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
