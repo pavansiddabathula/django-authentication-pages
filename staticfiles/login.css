@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/images/background1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#bg {
+    background-image: url('/static/images/background1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw; 
+    height: 100vh; 
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #182f7b;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    position: relative;
+}
+
+h2 {
+    color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
+
+.input-container {
+    position: relative;
+}
+
+.password-input input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    padding-right: 40px;
+}
+
+.password-input button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 10px;
+}
+
+@font-face {
+    font-family: 'LoginButtonFont';
+    src: url('/static/fonts/login-button-font.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'EyeSymbolFont';
+    src: url('/static/fonts/eye-symbol-font.woff') format('woff');
+}
+
+#submit {
+    padding: 15px 25px;
+    background-color: #1f5fd7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'LoginButtonFont', Arial, sans-serif; 
+}
+
+.password-input button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 10px;
+    font-family: 'EyeSymbolFont', Arial, sans-serif;
+}
+
+.forgot-password a {
+    color: #ff8c00; 
+}
